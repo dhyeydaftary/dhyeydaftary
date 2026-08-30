@@ -1,0 +1,239 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="svg-title-c svg-desc-c">
+
+  <title id="svg-title-c">Stack Cross-Section — Engineering Map (Variant C)</title>
+  <desc id="svg-desc-c">Strongly isometric cross-section of a software system showing four architectural layers (Frontend, Backend, Data, AI/ML) and a Web3 branch with pronounced 3D depth. Amber project probes trace actual coverage: CC spans Frontend–Backend–Data; WSA spans Backend–Data; AMR spans Backend–Data–AI/ML; OC is a continuous path from Backend through Data to Web3.</desc>
+
+  <defs>
+    <filter id="layer-shadow-c" x="-5%" y="-5%" width="115%" height="130%">
+      <feDropShadow dx="2" dy="5" stdDeviation="5" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+    <filter id="oc-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="probe-glow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Top-face clips so label knockout panels can't spill past a slab edge -->
+    <clipPath id="clip-fe-c"><polygon points="80,155 530,65 600,100 150,190"/></clipPath>
+    <clipPath id="clip-be-c"><polygon points="80,245 530,155 600,190 150,280"/></clipPath>
+    <clipPath id="clip-da-c"><polygon points="80,335 530,245 600,280 150,370"/></clipPath>
+    <clipPath id="clip-ai-c"><polygon points="80,425 530,335 600,370 150,460"/></clipPath>
+  </defs>
+
+  <!-- Background — clean dark, no gradient that bleeds green -->
+  <rect width="800" height="600" fill="#0C0F14"/>
+
+  <!-- ── HEADER ── -->
+  <text x="48" y="35" font-family="'JetBrains Mono','SFMono-Regular','Consolas',monospace" font-size="12" fill="#374151" letter-spacing="2">ENGINEERING MAP · VARIANT C</text>
+  <text x="48" y="62" font-family="'JetBrains Mono','SFMono-Regular','Consolas',monospace" font-size="22" fill="#F9FAFB" font-weight="bold" letter-spacing="0.5">stack cross-section</text>
+  <rect x="48" y="69" width="60" height="2" rx="1" fill="#F59E0B"/>
+  <text x="48" y="86" font-family="'JetBrains Mono','SFMono-Regular','Consolas',monospace" font-size="10.5" fill="#374151" letter-spacing="1">— isometric / dimensional —</text>
+
+  <!-- ── LEGEND ── -->
+  <g transform="translate(586, 24)" font-family="'JetBrains Mono','SFMono-Regular','Consolas',monospace">
+    <rect x="0" y="0" width="14" height="14" rx="2" fill="#263045" stroke="#6B7280" stroke-width="1.5"/>
+    <text x="21" y="11.5" font-size="10.5" fill="#9CA3AF">CORE</text>
+    <rect x="0" y="21" width="14" height="14" rx="2" fill="#1A2233" stroke="#4B5563" stroke-width="1.5"/>
+    <text x="21" y="32.5" font-size="10.5" fill="#9CA3AF">WORKING WITH</text>
+    <rect x="0" y="42" width="14" height="14" rx="2" fill="none" stroke="#374151" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <text x="21" y="53.5" font-size="10.5" fill="#9CA3AF">EXPLORING</text>
+    <line x1="0" y1="73" x2="14" y2="73" stroke="#F59E0B" stroke-width="1.5"/>
+    <circle cx="7" cy="73" r="4" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
+    <text x="21" y="76.5" font-size="10.5" fill="#9CA3AF">PROBE</text>
+  </g>
+
+  <!-- ──────────────────────────────────────────────
+       STRONG ISOMETRIC LAYERS — Variant C
+
+       Platform geometry:
+         Top-face left vertex:  (80, y_base)
+         Top-face right vertex: (530, y_base - 90)   [450px wide, 90px iso rise]
+         Right side-face depth = 30px; 45° side adds 35px right / 35px down.
+
+       Layer y_base values:
+         Frontend : 155   Backend : 245   Data : 335   AI/ML : 425
+
+       Per-layer technology lists intentionally omitted from the map
+       (they cannot be enlarged to mobile-legible size along the iso
+       depth axis without dominating the geometry — §18/§19). They are
+       fully carried by the Project Index below. Same choice across A/B/C.
+  ────────────────────────────────────────────── -->
+
+  <!-- FRONTEND — CORE (solid fill) -->
+  <g id="layer-frontend" filter="url(#layer-shadow-c)">
+    <polygon points="80,185 530,95 600,130 150,220" fill="#141B27" stroke="none"/>
+    <polygon points="530,65 600,100 600,130 530,95" fill="#1A2335" stroke="#374151" stroke-width="1.2"/>
+    <polygon points="80,155 530,65 600,100 150,190" fill="#243048" stroke="#4B5563" stroke-width="1.8"/>
+  </g>
+
+  <!-- BACKEND — CORE (solid fill) -->
+  <g id="layer-backend" filter="url(#layer-shadow-c)">
+    <polygon points="80,275 530,185 600,220 150,310" fill="#111829" stroke="none"/>
+    <polygon points="530,155 600,190 600,220 530,190" fill="#151F30" stroke="#374151" stroke-width="1.2"/>
+    <polygon points="80,245 530,155 600,190 150,280" fill="#1E2C42" stroke="#4B5563" stroke-width="1.8"/>
+  </g>
+
+  <!-- DATA — WORKING WITH (slightly lighter, solid border) -->
+  <g id="layer-data" filter="url(#layer-shadow-c)">
+    <polygon points="80,365 530,275 600,310 150,400" fill="#0E1420" stroke="none"/>
+    <polygon points="530,245 600,280 600,310 530,280" fill="#111622" stroke="#374151" stroke-width="1.2"/>
+    <polygon points="80,335 530,245 600,280 150,370" fill="#17203A" stroke="#4B5563" stroke-width="1.8"/>
+  </g>
+
+  <!-- AI/ML — EXPLORING (dashed, minimal fill — NO gradient, just solid dark) -->
+  <g id="layer-aiml" filter="url(#layer-shadow-c)">
+    <polygon points="80,455 530,365 600,400 150,490" fill="#0C0F14" stroke="none" opacity="0.6"/>
+    <polygon points="530,335 600,370 600,400 530,370" fill="#0C0F14" stroke="#374151" stroke-width="1.2" stroke-dasharray="4,3"/>
+    <polygon points="80,425 530,335 600,370 150,460" fill="#0E1320" stroke="#374151" stroke-width="1.8" stroke-dasharray="5,3"/>
+  </g>
+
+  <!-- ── WEB3 BRANCH (EXPLORING) — positioned right of Data layer ── -->
+  <g id="web3-branch">
+    <polygon points="620,308 718,268 758,290 660,330" fill="#0C0F14" stroke="#4B5563" stroke-width="1.5" stroke-dasharray="5,3"/>
+    <polygon points="718,268 758,290 758,308 718,286" fill="#09090E" stroke="#374151" stroke-width="1" stroke-dasharray="4,3"/>
+    <polygon points="620,308 718,286 758,308 660,330" fill="#080A0E" stroke="none" opacity="0.5"/>
+    <text x="650" y="306" font-family="'JetBrains Mono','SFMono-Regular','Consolas',monospace" font-size="14" fill="#8B93A0" letter-spacing="1.5" font-weight="bold">WEB3</text>
+    <text x="650" y="320" font-family="'JetBrains Mono','SFMono-Regular','Consolas',monospace" font-size="9" fill="#565E68">EXPLORING</text>
+    <text x="624" y="348" font-family="'JetBrains Mono','SFMono-Regular','Consolas',monospace" font-size="10" fill="#565E68">Solidity · Arbitrum</text>
+  </g>
+
+  <!-- ── LEFT EDGE DEPTH MARKER ── -->
+  <line x1="78" y1="155" x2="78" y2="460" stroke="#1F2937" stroke-width="2"/>
+  <g stroke="#374151" stroke-width="1">
+    <line x1="73" y1="155" x2="83" y2="155"/>
+    <line x1="73" y1="245" x2="83" y2="245"/>
+    <line x1="73" y1="335" x2="83" y2="335"/>
+    <line x1="73" y1="425" x2="83" y2="425"/>
+    <line x1="73" y1="460" x2="83" y2="460"/>
+  </g>
+  <text transform="translate(60,432) rotate(-90)" font-family="'JetBrains Mono','SFMono-Regular','Consolas',monospace" font-size="9" fill="#374151" letter-spacing="1.5">DEPTH</text>
+
+  <!-- ──────────────────────────────────────────────
+       PROJECT PROBES — AMBER PATHS
+
+       Probe x positions:  CC=178   WSA=278   AMR=376   OC=468
+
+       Iso rise at each x:  90 * (x - 80) / 450
+         Frontend top_y=155:  CC → 135
+         Backend  top_y=245:  CC → 225   WSA → 205   AMR → 186   OC → 167
+         Data     top_y=335:  CC → 315   WSA → 295   AMR → 276   OC → 257
+         AI/ML    top_y=425:  AMR → 366
+
+       Bug-2 fix: non-Frontend probe badges (WSA/AMR/OC) now sit in the
+       Frontend-underside / Backend-top gap at each probe's own x, in a
+       descending staircase — never over a layer-name or its status tag.
+       AI/ML label moved left of the AMR probe so its line no longer
+       crosses the glyphs.
+  ────────────────────────────────────────────── -->
+
+  <g id="projects">
+
+    <!-- CC: Frontend → Backend → Data -->
+    <g id="probe-cc" filter="url(#probe-glow)">
+      <line x1="178" y1="135" x2="178" y2="346" stroke="#F59E0B" stroke-width="2.5" opacity="0.95"/>
+      <circle cx="178" cy="155" r="5" fill="#0C0F14" stroke="#F59E0B" stroke-width="2.5"/>
+      <circle cx="178" cy="245" r="5" fill="#0C0F14" stroke="#F59E0B" stroke-width="2.5"/>
+      <circle cx="178" cy="335" r="5" fill="#0C0F14" stroke="#F59E0B" stroke-width="2.5"/>
+    </g>
+    <!-- CC badge — above Frontend (CC genuinely enters at Frontend) -->
+    <line x1="178" y1="133" x2="178" y2="135" stroke="#F59E0B" stroke-width="1" stroke-dasharray="2,2" opacity="0.45"/>
+    <rect x="159" y="112" width="38" height="21" rx="3" fill="#F59E0B"/>
+    <text x="165" y="127" font-family="'JetBrains Mono','SFMono-Regular','Consolas',monospace" font-size="13" fill="#0C0F14" font-weight="bold">CC</text>
+
+    <!-- WSA: Backend → Data -->
+    <g id="probe-wsa" filter="url(#probe-glow)">
+      <line x1="278" y1="205" x2="278" y2="326" stroke="#F59E0B" stroke-width="2.5" opacity="0.95"/>
+      <circle cx="278" cy="245" r="5" fill="#0C0F14" stroke="#F59E0B" stroke-width="2.5"/>
+      <circle cx="278" cy="335" r="5" fill="#0C0F14" stroke="#F59E0B" stroke-width="2.5"/>
+    </g>
+    <!-- WSA badge — in the gap just above its Backend entry -->
+    <line x1="278" y1="192" x2="278" y2="205" stroke="#F59E0B" stroke-width="1" stroke-dasharray="2,2" opacity="0.45"/>
+    <rect x="252" y="171" width="48" height="21" rx="3" fill="#F59E0B"/>
+    <text x="258" y="186" font-family="'JetBrains Mono','SFMono-Regular','Consolas',monospace" font-size="13" fill="#0C0F14" font-weight="bold">WSA</text>
+
+    <!-- AMR: Backend → Data → AI/ML -->
+    <g id="probe-amr" filter="url(#probe-glow)">
+      <line x1="376" y1="186" x2="376" y2="398" stroke="#F59E0B" stroke-width="2.5" opacity="0.95"/>
+      <circle cx="376" cy="245" r="5" fill="#0C0F14" stroke="#F59E0B" stroke-width="2.5"/>
+      <circle cx="376" cy="335" r="5" fill="#0C0F14" stroke="#F59E0B" stroke-width="2.5"/>
+      <circle cx="376" cy="425" r="5" fill="#0C0F14" stroke="#F59E0B" stroke-width="2.5"/>
+    </g>
+    <!-- AMR badge — in the gap just above its Backend entry -->
+    <line x1="376" y1="174" x2="376" y2="186" stroke="#F59E0B" stroke-width="1" stroke-dasharray="2,2" opacity="0.45"/>
+    <rect x="352" y="153" width="48" height="21" rx="3" fill="#F59E0B"/>
+    <text x="358" y="168" font-family="'JetBrains Mono','SFMono-Regular','Consolas',monospace" font-size="13" fill="#0C0F14" font-weight="bold">AMR</text>
+
+    <!-- OC: Backend → Data → bridge → Web3 (single continuous amber path) -->
+    <g id="probe-oc" filter="url(#oc-glow)">
+      <line x1="468" y1="167" x2="468" y2="290" stroke="#F59E0B" stroke-width="2.5" opacity="0.95"/>
+      <!-- Bridge arc from Data level → Web3 platform -->
+      <path d="M 468 278 Q 545 270 625 280" stroke="#F59E0B" stroke-width="2.5" fill="none" opacity="0.95"/>
+      <circle cx="468" cy="245" r="5" fill="#0C0F14" stroke="#F59E0B" stroke-width="2.5"/>
+      <circle cx="468" cy="335" r="5" fill="#0C0F14" stroke="#F59E0B" stroke-width="2.5"/>
+      <!-- Junction dot where bridge departs -->
+      <circle cx="468" cy="278" r="4.5" fill="#F59E0B"/>
+      <!-- Web3 terminus -->
+      <circle cx="628" cy="280" r="5" fill="#0C0F14" stroke="#F59E0B" stroke-width="2.5"/>
+    </g>
+    <!-- Bridge label -->
+    <text x="502" y="262" font-family="'JetBrains Mono','SFMono-Regular','Consolas',monospace" font-size="11" fill="#D97706">bridge</text>
+    <!-- OC badge — in the gap just above its Backend entry -->
+    <line x1="468" y1="158" x2="468" y2="167" stroke="#F59E0B" stroke-width="1" stroke-dasharray="2,2" opacity="0.45"/>
+    <rect x="449" y="137" width="38" height="21" rx="3" fill="#F59E0B"/>
+    <text x="455" y="152" font-family="'JetBrains Mono','SFMono-Regular','Consolas',monospace" font-size="13" fill="#0C0F14" font-weight="bold">OC</text>
+
+  </g>
+
+  <!-- ── LAYER LABELS ──
+       Drawn AFTER the probes with a face-colour text halo (paint-order:
+       stroke) so a probe line passing behind the glyphs is knocked out
+       rather than cutting through the text. Positions unchanged. -->
+  <g id="labels" font-family="'JetBrains Mono','SFMono-Regular','Consolas',monospace">
+    <rect x="244" y="102" width="200" height="27" fill="#243048" clip-path="url(#clip-fe-c)"/>
+    <text x="255" y="121" font-size="17" fill="#C9D1D9" letter-spacing="1.5" font-weight="bold">FRONTEND</text>
+    <text x="386" y="121" font-size="11" fill="#565E68">· CORE</text>
+    <rect x="244" y="192" width="200" height="27" fill="#1E2C42" clip-path="url(#clip-be-c)"/>
+    <text x="255" y="211" font-size="17" fill="#C9D1D9" letter-spacing="1.5" font-weight="bold">BACKEND</text>
+    <text x="386" y="211" font-size="11" fill="#565E68">· CORE</text>
+    <rect x="244" y="282" width="176" height="27" fill="#17203A" clip-path="url(#clip-da-c)"/>
+    <text x="255" y="301" font-size="17" fill="#9CA3AF" letter-spacing="1.5" font-weight="bold">DATA</text>
+    <text x="320" y="301" font-size="11" fill="#565E68">· WORKING WITH</text>
+    <rect x="231" y="373" width="118" height="42" fill="#0E1320" clip-path="url(#clip-ai-c)"/>
+    <text x="240" y="390" font-size="17" fill="#8B93A0" letter-spacing="1.5" font-weight="bold">AI / ML</text>
+    <text x="240" y="407" font-size="11" fill="#565E68">· EXPLORING</text>
+  </g>
+
+  <!-- ── PROJECT INDEX ── -->
+  <g transform="translate(48, 470)" font-family="'JetBrains Mono','SFMono-Regular','Consolas',monospace">
+    <line x1="0" y1="0" x2="704" y2="0" stroke="#1F2937" stroke-width="1"/>
+    <g transform="translate(0,20)">
+      <rect x="0" y="-11" width="30" height="16" rx="2" fill="#F59E0B"/>
+      <text x="5" y="1.5" font-size="11" fill="#0C0F14" font-weight="bold">CC</text>
+      <text x="42" y="1.5" font-size="11" fill="#9CA3AF">campus-connect</text>
+      <text x="196" y="1.5" font-size="10" fill="#565E68">Flask · PostgreSQL · Tailwind/Jinja2</text>
+    </g>
+    <g transform="translate(0,42)">
+      <rect x="0" y="-11" width="38" height="16" rx="2" fill="#F59E0B"/>
+      <text x="5" y="1.5" font-size="11" fill="#0C0F14" font-weight="bold">WSA</text>
+      <text x="50" y="1.5" font-size="11" fill="#9CA3AF">womens-safety-alert-system</text>
+      <text x="290" y="1.5" font-size="10" fill="#565E68">Java · MySQL · CLI</text>
+    </g>
+    <g transform="translate(0,64)">
+      <rect x="0" y="-11" width="38" height="16" rx="2" fill="#F59E0B"/>
+      <text x="5" y="1.5" font-size="11" fill="#0C0F14" font-weight="bold">AMR</text>
+      <text x="50" y="1.5" font-size="11" fill="#9CA3AF">AMR-Insight</text>
+      <text x="160" y="1.5" font-size="10" fill="#565E68">Node/Express · Django-ML · SHAP</text>
+    </g>
+    <g transform="translate(0,86)">
+      <rect x="0" y="-11" width="30" height="16" rx="2" fill="#F59E0B"/>
+      <text x="5" y="1.5" font-size="11" fill="#0C0F14" font-weight="bold">OC</text>
+      <text x="42" y="1.5" font-size="11" fill="#9CA3AF">originchain</text>
+      <text x="160" y="1.5" font-size="10" fill="#565E68">Express · Prisma · Arbitrum Stylus</text>
+    </g>
+  </g>
+
+  <text x="752" y="592" font-family="'JetBrains Mono','SFMono-Regular','Consolas',monospace" font-size="9" fill="#1F2937" text-anchor="end">variant-C / dark</text>
+
+</svg>
