@@ -1,0 +1,76 @@
+name: Contribution activity
+
+# Regenerates the contribution-calendar SVGs embedded by the profile README.
+# lowlighter/metrics, self-hosted, Calendar plugin ONLY — flat and quiet by
+# design (§26). The signature visual (assets/stack-cross-section-*.svg) is the
+# one place isometric / 3D treatment appears (§34); nothing here competes with it.
+#
+# Requires repo secret METRICS_TOKEN — a GitHub PAT with read-only access to
+# public profile/contribution data (classic: `public_repo` + `read:user`;
+# fine-grained: read-only, no repo write needed by the token itself).
+# Commits its own output to `dev` (never `main`, per §31).
+
+on:
+  schedule:
+    - cron: "17 5 * * *"      # daily, 05:17 UTC — daily is sufficient (§26)
+  workflow_dispatch: {}        # manual trigger for the first run / testing
+
+permissions:
+  contents: write              # the Action commits the generated SVGs to dev
+
+jobs:
+  calendar:
+    runs-on: ubuntu-latest
+    steps:
+      # ── dark  ->  assets/contribution-calendar-dark.svg ──────────────────
+      - name: Calendar (dark)
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: dhyeydaftary
+          filename: assets/contribution-calendar-dark.svg
+          base: ""                        # no default sections — plugin only
+          plugin_calendar: yes
+          plugin_calendar_limit: 1        # current year only — keep it small
+          config_timezone: Asia/Kolkata
+          output_action: commit
+          committer_branch: dev           # <-- targets dev, not main (§31)
+          committer_message: "chore(assets): refresh contribution calendar (dark)"
+          # Locked palette: graphite ground, amber (#F59E0B) as the single
+          # intensity accent. CSS var overrides are best-effort for the
+          # current plugin version — see note in the implementation report.
+          extras_css: |
+            :root {
+              --color-calendar-graph-day-bg: #1b2028;
+              --color-calendar-graph-day-L1-bg: #6b4708;
+              --color-calendar-graph-day-L2-bg: #9a6a0d;
+              --color-calendar-graph-day-L3-bg: #cf8f13;
+              --color-calendar-graph-day-L4-bg: #f59e0b;
+            }
+            svg { background: #0c0f14 !important; }
+            text { fill: #8b93a0 !important; }
+
+      # ── light  ->  assets/contribution-calendar-light.svg ────────────────
+      - name: Calendar (light)
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: dhyeydaftary
+          filename: assets/contribution-calendar-light.svg
+          base: ""
+          plugin_calendar: yes
+          plugin_calendar_limit: 1
+          config_timezone: Asia/Kolkata
+          output_action: commit
+          committer_branch: dev
+          committer_message: "chore(assets): refresh contribution calendar (light)"
+          extras_css: |
+            :root {
+              --color-calendar-graph-day-bg: #e9ecf1;
+              --color-calendar-graph-day-L1-bg: #f6d9a6;
+              --color-calendar-graph-day-L2-bg: #f0b95e;
+              --color-calendar-graph-day-L3-bg: #e39a2e;
+              --color-calendar-graph-day-L4-bg: #f59e0b;
+            }
+            svg { background: #f4f5f7 !important; }
+            text { fill: #4a5563 !important; }
