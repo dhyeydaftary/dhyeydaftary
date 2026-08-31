@@ -3,9 +3,7 @@
 # Dhyey Daftary
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/portrait-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/portrait-light.svg">
-  <img alt="Dot-matrix portrait of Dhyey Daftary, revealing on load." src="assets/portrait-dark.svg" width="220">
+  <img alt="Color dot-matrix portrait of Dhyey Daftary, revealing on load." src="assets/portrait.svg" width="320">
 </picture>
 
 ![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&pause=1000&color=F59E0B&center=true&vCenter=true&width=600&lines=Full-stack+engineer%2C+exploring+AI%2FML;Building+explainable+ML+%26+backend+systems;Currently%3A+RSNA+Knee+MRI+Challenge+on+Kaggle;Occasionally+solving+problems+on+LeetCode)
