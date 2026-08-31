@@ -40,23 +40,20 @@ jobs:
           output_action: commit
           committer_branch: dev                 # <-- targets dev, not main (§31)
           committer_message: "chore(assets): refresh isometric contribution calendar (dark)"
-          # Locked palette: graphite ground, amber (#F59E0B) intensity ramp.
-          # Isocalendar exposes NO colour config, and its 3D cube faces are
-          # pre-shaded green variants the plugin computes — so `extras_css`
-          # can only reliably set the ground + text here; the intensity ramp
-          # override below is best-effort and MUST be checked against the
-          # first real generated SVG (see implementation report).
+          # Ground only: graphite background + a theme-matched label colour.
+          # The contribution-intensity scale is deliberately left as the
+          # isocalendar plugin's native GitHub green ramp — an intentional,
+          # confirmed break from the single-accent-colour rule used elsewhere
+          # in the README. (Isocalendar exposes no colour config anyway;
+          # extras_css can style the ground + text but not the 3D cube faces.)
           extras_css: |
             svg { background: #0c0f14 !important; }
             text, tspan { fill: #8b93a0 !important; }
-            /* GitHub contribution greens -> amber ramp (base fills; the
-               isometric top/side faces are shaded variants and may not all
-               be caught by these selectors) */
-            [fill="#ebedf0"], [fill="#161b22"] { fill: #1b2028 !important; }
-            [fill="#9be9a8"], [fill="#0e4429"] { fill: #6b4708 !important; }
-            [fill="#40c463"], [fill="#006d32"] { fill: #9a6a0d !important; }
-            [fill="#30a14e"], [fill="#26a641"] { fill: #cf8f13 !important; }
-            [fill="#216e39"], [fill="#39d353"] { fill: #f59e0b !important; }
+            /* Empty (zero-contribution) day tiles: one subtle step off the
+               ground so the whole grid floor stays visible. Contribution
+               levels L1-L4 keep the plugin's native green. */
+            :root { --color-calendar-graph-day-bg: #1a1f28; }
+            [fill="#ebedf0"], [fill="#161b22"] { fill: #1a1f28 !important; }
 
       # ── light  ->  assets/contribution-calendar-light.svg ────────────────
       - name: Isocalendar (light)
@@ -75,8 +72,8 @@ jobs:
           extras_css: |
             svg { background: #f4f5f7 !important; }
             text, tspan { fill: #4a5563 !important; }
-            [fill="#ebedf0"], [fill="#161b22"] { fill: #e9ecf1 !important; }
-            [fill="#9be9a8"], [fill="#0e4429"] { fill: #f6d9a6 !important; }
-            [fill="#40c463"], [fill="#006d32"] { fill: #f0b95e !important; }
-            [fill="#30a14e"], [fill="#26a641"] { fill: #e39a2e !important; }
-            [fill="#216e39"], [fill="#39d353"] { fill: #f59e0b !important; }
+            /* Empty (zero-contribution) day tiles: one subtle step off the
+               ground so the whole grid floor stays visible. Contribution
+               levels L1-L4 keep the plugin's native green. */
+            :root { --color-calendar-graph-day-bg: #e5e7eb; }
+            [fill="#ebedf0"], [fill="#161b22"] { fill: #e5e7eb !important; }
