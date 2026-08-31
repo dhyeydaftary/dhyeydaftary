@@ -1,0 +1,82 @@
+name: Contribution activity
+
+# Regenerates the isometric contribution-calendar SVGs embedded by the profile
+# README. lowlighter/metrics, self-hosted, Isocalendar plugin (isometric 3D
+# contribution landscape).
+#
+# NOTE (scope change, v2): the README now has two 3D moments — the signature
+# engineering map AND this calendar. This is an intentional, approved override
+# of the earlier "one isometric place only" rule, not an oversight.
+#
+# Requires repo secret METRICS_TOKEN — a GitHub PAT; a scopeless / read-only
+# token is sufficient (public profile + contribution data only). The token
+# itself needs no repo-write scope; the job's `contents: write` permission
+# handles the commit.
+# Commits its own output to `dev` (never `main`, per §31).
+
+on:
+  schedule:
+    - cron: "17 5 * * *"      # daily, 05:17 UTC — daily is sufficient (§26)
+  workflow_dispatch: {}        # manual trigger for the first run / testing
+
+permissions:
+  contents: write              # the Action commits the generated SVGs to dev
+
+jobs:
+  isocalendar:
+    runs-on: ubuntu-latest
+    steps:
+      # ── dark  ->  assets/contribution-calendar-dark.svg ──────────────────
+      - name: Isocalendar (dark)
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: dhyeydaftary
+          filename: assets/contribution-calendar-dark.svg
+          base: ""                              # no default sections — plugin only
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year   # 1 year; use half-year for a smaller block
+          config_timezone: Asia/Kolkata
+          output_action: commit
+          committer_branch: dev                 # <-- targets dev, not main (§31)
+          committer_message: "chore(assets): refresh isometric contribution calendar (dark)"
+          # Locked palette: graphite ground, amber (#F59E0B) intensity ramp.
+          # Isocalendar exposes NO colour config, and its 3D cube faces are
+          # pre-shaded green variants the plugin computes — so `extras_css`
+          # can only reliably set the ground + text here; the intensity ramp
+          # override below is best-effort and MUST be checked against the
+          # first real generated SVG (see implementation report).
+          extras_css: |
+            svg { background: #0c0f14 !important; }
+            text, tspan { fill: #8b93a0 !important; }
+            /* GitHub contribution greens -> amber ramp (base fills; the
+               isometric top/side faces are shaded variants and may not all
+               be caught by these selectors) */
+            [fill="#ebedf0"], [fill="#161b22"] { fill: #1b2028 !important; }
+            [fill="#9be9a8"], [fill="#0e4429"] { fill: #6b4708 !important; }
+            [fill="#40c463"], [fill="#006d32"] { fill: #9a6a0d !important; }
+            [fill="#30a14e"], [fill="#26a641"] { fill: #cf8f13 !important; }
+            [fill="#216e39"], [fill="#39d353"] { fill: #f59e0b !important; }
+
+      # ── light  ->  assets/contribution-calendar-light.svg ────────────────
+      - name: Isocalendar (light)
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: dhyeydaftary
+          filename: assets/contribution-calendar-light.svg
+          base: ""
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          config_timezone: Asia/Kolkata
+          output_action: commit
+          committer_branch: dev
+          committer_message: "chore(assets): refresh isometric contribution calendar (light)"
+          extras_css: |
+            svg { background: #f4f5f7 !important; }
+            text, tspan { fill: #4a5563 !important; }
+            [fill="#ebedf0"], [fill="#161b22"] { fill: #e9ecf1 !important; }
+            [fill="#9be9a8"], [fill="#0e4429"] { fill: #f6d9a6 !important; }
+            [fill="#40c463"], [fill="#006d32"] { fill: #f0b95e !important; }
+            [fill="#30a14e"], [fill="#26a641"] { fill: #e39a2e !important; }
+            [fill="#216e39"], [fill="#39d353"] { fill: #f59e0b !important; }
