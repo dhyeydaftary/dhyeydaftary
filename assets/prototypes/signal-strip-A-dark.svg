@@ -1,0 +1,67 @@
+<svg viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ss-Ad-t ss-Ad-d">
+  <title id="ss-Ad-t">Signal Strip — abstract technical banner (variant A, dark)</title>
+  <desc id="ss-Ad-d">A wide, low, abstract banner in a graphite palette: thin isometric linework in shallow perspective that grows more defined toward the centre and tapers into negative space at both edges, with three small amber signal markers. Visual identity and texture only — it carries no data, labels, or diagram content.</desc>
+
+  <defs>
+    <linearGradient id="ss-Ad-glow" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1200" y2="0">
+      <stop offset="0" stop-color="#3E4551" stop-opacity="0.03"/>
+      <stop offset="0.17" stop-color="#3E4551" stop-opacity="0.28"/>
+      <stop offset="0.47" stop-color="#3E4551" stop-opacity="0.84"/>
+      <stop offset="0.72" stop-color="#3E4551" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#3E4551" stop-opacity="0.03"/>
+    </linearGradient>
+    <linearGradient id="ss-Ad-fadeL" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="285" y2="0">
+      <stop offset="0" stop-color="#0C0F14" stop-opacity="1"/>
+      <stop offset="1" stop-color="#0C0F14" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="ss-Ad-fadeR" gradientUnits="userSpaceOnUse" x1="875" y1="0" x2="1200" y2="0">
+      <stop offset="0" stop-color="#0C0F14" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0C0F14" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+
+  <g id="background"><rect width="1200" height="200" fill="#0C0F14"/></g>
+
+  <g id="geometry" fill="none" stroke="url(#ss-Ad-glow)" stroke-linecap="round">
+    <g id="rails" stroke-width="1">
+      <line x1="190" y1="72.5" x2="690" y2="47.5"/>
+      <line x1="214" y1="186.72" x2="762" y2="120.96"/>
+      <line x1="244" y1="123.46" x2="686" y2="85.89"/>
+      <line x1="392" y1="76.4" x2="560" y2="68"/>
+      <line x1="512" y1="88.68" x2="662" y2="75.93"/>
+      <line x1="470" y1="138" x2="636" y2="118.08"/>
+      <line x1="560" y1="108.6" x2="744" y2="92.96"/>
+      <line x1="616" y1="73.2" x2="800" y2="64"/>
+      <line x1="640" y1="149.6" x2="786" y2="132.08"/>
+      <line x1="596" y1="114.88" x2="712" y2="100.96"/>
+      <line x1="748" y1="122.64" x2="872" y2="107.76"/>
+    </g>
+    <g id="ground" stroke-width="1" stroke-opacity="0.42">
+      <line x1="300" y1="177.7" x2="556" y2="161.36"/>
+      <line x1="612" y1="169.28" x2="884" y2="152.64"/>
+    </g>
+    <g id="cross" stroke-width="1" stroke-opacity="0.88">
+      <line x1="436" y1="123.14" x2="566" y2="137.44"/>
+      <line x1="520" y1="150" x2="662" y2="165.62"/>
+      <line x1="556" y1="82.2" x2="690" y2="96.94"/>
+      <line x1="648" y1="57.6" x2="784" y2="72.56"/>
+      <line x1="690" y1="129.6" x2="802" y2="141.92"/>
+    </g>
+    <g id="ticks" stroke-width="1.2" stroke-linecap="butt" stroke-opacity="0.68">
+      <line x1="460.5" y1="119.8" x2="475.5" y2="121.1"/>
+      <line x1="692.5" y1="74.1" x2="707.5" y2="75.3"/>
+    </g>
+  </g>
+
+  <g id="signals">
+    <circle cx="620" cy="103.5" r="7" fill="none" stroke="#F59E0B" stroke-width="1" stroke-opacity="0.3"/>
+    <circle cx="620" cy="103.5" r="3.2" fill="#F59E0B"/>
+    <line x1="702" y1="102.16" x2="728" y2="99.04" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+    <rect x="-3" y="-3" width="6" height="6" fill="#F59E0B" transform="translate(816 114.48) rotate(45)"/>
+  </g>
+
+  <g id="edge-fades">
+    <rect x="0" y="0" width="285" height="200" fill="url(#ss-Ad-fadeL)"/>
+    <rect x="875" y="0" width="325" height="200" fill="url(#ss-Ad-fadeR)"/>
+  </g>
+</svg>

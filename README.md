@@ -1,8 +1,18 @@
-# Dhyey Daftary
-
 <div align="center">
 
+# Dhyey Daftary
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/portrait-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/portrait-light.svg">
+  <img alt="Dot-matrix portrait of Dhyey Daftary, revealing on load." src="assets/portrait-dark.svg" width="220">
+</picture>
+
 ![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&pause=1000&color=F59E0B&center=true&vCenter=true&width=600&lines=Full-stack+engineer%2C+exploring+AI%2FML;Building+explainable+ML+%26+backend+systems;Currently%3A+RSNA+Knee+MRI+Challenge+on+Kaggle;Occasionally+solving+problems+on+LeetCode)
+
+<a href="https://www.linkedin.com/in/dhyey-daftary/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+<a href="mailto:dhyeydaftary@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+<a href="https://github.com/dhyeydaftary"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
 
 </div>
 
@@ -38,28 +48,61 @@ trained yet — getting the data and validation right first.
 
 ### ~/ toolbox
 
-**Core**  
-![Python](https://img.shields.io/badge/-Python-1b1f24?style=flat-square&logo=python&logoColor=F59E0B)
-![JavaScript](https://img.shields.io/badge/-JavaScript-1b1f24?style=flat-square&logo=javascript&logoColor=F59E0B)
-![TypeScript](https://img.shields.io/badge/-TypeScript-1b1f24?style=flat-square&logo=typescript&logoColor=F59E0B)
-![Flask](https://img.shields.io/badge/-Flask-1b1f24?style=flat-square&logo=flask&logoColor=F59E0B)
-![React](https://img.shields.io/badge/-React-1b1f24?style=flat-square&logo=react&logoColor=F59E0B)
-![Node.js](https://img.shields.io/badge/-Node.js-1b1f24?style=flat-square&logo=nodedotjs&logoColor=F59E0B)
-![Express](https://img.shields.io/badge/-Express-1b1f24?style=flat-square&logo=express&logoColor=F59E0B)
-![Git](https://img.shields.io/badge/-Git-1b1f24?style=flat-square&logo=git&logoColor=F59E0B)  
-<sub>Node · Express · MongoDB — the MERN stack</sub>
+**Languages**
+<br>
+<img src="https://skillicons.dev/icons?i=py,js,java,ts,rust" alt="Languages" />
 
-**Working with**  
-![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-1b1f24?style=flat-square&logo=postgresql&logoColor=F59E0B)
-![SQLAlchemy](https://img.shields.io/badge/-SQLAlchemy-1b1f24?style=flat-square&logo=sqlalchemy&logoColor=F59E0B)
-![Socket.IO](https://img.shields.io/badge/-Socket.IO-1b1f24?style=flat-square&logo=socketdotio&logoColor=F59E0B)
-![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-1b1f24?style=flat-square&logo=tailwindcss&logoColor=F59E0B)
-![MongoDB](https://img.shields.io/badge/-MongoDB-1b1f24?style=flat-square&logo=mongodb&logoColor=F59E0B)
-&nbsp;·&nbsp; Java
+<br>
 
-**Exploring**  
-![Solidity](https://img.shields.io/badge/-Solidity-1b1f24?style=flat-square&logo=solidity&logoColor=F59E0B)
-&nbsp;·&nbsp; AI/ML (SHAP-style explainable ML) · Web3 / Arbitrum
+**Frontend**
+<br>
+<img src="https://skillicons.dev/icons?i=html,css,react,tailwind,bootstrap,nextjs" alt="Frontend" />
+<br>
+<sub>Jinja2</sub>
+
+<br>
+
+**Backend & APIs**
+<br>
+<img src="https://skillicons.dev/icons?i=nodejs,express,django,flask" alt="Backend & APIs" />
+<br>
+<sub>Django REST Framework</sub>
+
+<br>
+
+**Data & Databases**
+<br>
+<img src="https://skillicons.dev/icons?i=mongodb,postgres,mysql,prisma" alt="Data & Databases" />
+<br>
+<sub>SQLAlchemy</sub>
+
+<br>
+
+**Real-time**
+<br>
+<sub>Socket.IO · WebSockets</sub>
+
+<br>
+
+**AI / ML**
+<br>
+<img src="https://skillicons.dev/icons?i=pytorch" alt="AI / ML" />
+<br>
+<sub>CatBoost · SHAP · Explainable ML</sub>
+
+<br>
+
+**Web3**
+<br>
+<img src="https://skillicons.dev/icons?i=solidity" alt="Web3" />
+<br>
+<sub>Arbitrum · Stylus</sub>
+
+<br>
+
+**Tools & Platforms**
+<br>
+<img src="https://skillicons.dev/icons?i=git,github,ipfs" alt="Tools & Platforms" />
 
 ---
 
@@ -124,11 +167,3 @@ Decentralized creator-identity and proof-of-origin platform on Arbitrum — clie
   <source media="(prefers-color-scheme: light)" srcset="assets/contribution-calendar-light.svg">
   <img alt="GitHub contribution activity over the past year, shown as an isometric calendar." src="assets/contribution-calendar-dark.svg">
 </picture>
-
----
-
-### ~/ connect
-
-[![GitHub](https://img.shields.io/badge/GitHub-dhyeydaftary-181717?style=flat-square&logo=github)](https://github.com/dhyeydaftary)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-dhyey--daftary-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/dhyey-daftary/)
-[![Email](https://img.shields.io/badge/Email-dhyeydaftary%40gmail.com-F59E0B?style=flat-square&logo=gmail&logoColor=white)](mailto:dhyeydaftary@gmail.com)
