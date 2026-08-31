@@ -165,5 +165,5 @@ Decentralized creator-identity and proof-of-origin platform on Arbitrum — clie
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/contribution-calendar-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/contribution-calendar-light.svg">
-  <img alt="GitHub contribution activity over the past year, shown as an isometric calendar." src="assets/contribution-calendar-dark.svg">
+  <img alt="GitHub contribution activity over the past year, shown as an isometric calendar." src="assets/contribution-calendar-dark.svg" width="100%">
 </picture>
